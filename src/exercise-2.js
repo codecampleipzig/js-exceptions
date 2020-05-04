@@ -5,5 +5,9 @@ import { thisMightFail } from "./exercise-2.util.js";
 
 // Catch the exception thrown from thisMightFail and log the error message(!!!) to the console
 export function main() {
-  thisMightFail();
+  try {
+    thisMightFail();
+  } catch (error) {
+    console.log(error.message);
+  }
 }

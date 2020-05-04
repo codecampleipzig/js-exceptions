@@ -3,4 +3,5 @@
 
 export function main() {
   // Throw an error object with the error message "This is not an exercise"
+  throw new Error("This is not an exercise");
 }

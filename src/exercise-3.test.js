@@ -32,4 +32,18 @@ describe("Exercise 3", () => {
     });
     expect(() => main()).toThrow(new Error("Number retries exceeded"));
   });
+
+  test("It should throw an exception if it needs 6 retries to succeed", () => {
+    const testReturnValue = "TEST_RETURN_VALUE";
+    let numCalls = 0;
+    thisMightFail.mockImplementation(() => {
+      ++numCalls;
+      if (numCalls == 6) {
+        return testReturnValue;
+      } else {
+        throw new Error();
+      }
+    });
+    expect(() => main()).toThrow(new Error("Number retries exceeded"));
+  });
 });
